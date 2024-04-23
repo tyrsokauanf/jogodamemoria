@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Jogo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            border: none;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-color: #ffffff; /* Alterado para branco */
+            font-size: 10px; /* Tamanho da fonte reduzido */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px; /* Tamanho da fonte reduzido */
+            line-height: 1.6; /* Espaçamento entre linhas aumentado */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em; /* Tamanho da fonte aumentado */
+        }
+
+        .objective, .interface, .play {
+            margin-bottom: 20px; /* Adiciona espaçamento entre os quadrados */
+            padding: 15px; /* Adiciona espaçamento interno */
+            background-color: #f0f0f0; /* Cor de fundo dos quadrados */
+            border: 2px solid #000000; /* Borda preta */
+            border-radius: 5px;
+            font-size: 0.9em; /* Tamanho da fonte reduzido */
+            text-align: justify; /* Justifica o texto */
+        }
+
+        #game-link {
+            display: block;
+            width: 250px; /* Aumento do tamanho do link */
+            margin: 20px auto;
+            padding: 15px 30px; /* Aumento do padding */
+            text-align: center;
+            background-color: #000000; /* Alterado para preto */
+            color: #ffffff; /* Alterado para branco */
+            text-decoration: none;
+            border: 2px solid #808080; /* Alterado para borda cinza */
+            border-radius: 5px;
+        }
+
+        #game-link:hover {
+            background-color: #333333; /* Alterado para escurecer no hover */
+            border-color: #555555; /* Alterado para borda mais escura no hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Como Jogar?</h1>
+        <div class="objective">
+            <p>Objetivo:</p>
+            <p>O objetivo do jogo é combinar corretamente cada fato contábil com o lançamento contábil que o descreve.</p>
+        </div>
+        <div class="interface">
+            <p>Interface do Jogo:</p>
+            <p>Na tela, você verá várias cartas viradas para baixo, cada uma representando um fato contábil ou seu lançamento correspondente.</p>
+        </div>
+        <div class="play">
+            <p>Jogada:</p>
+            <p>Clique em duas cartas para revelá-las. Se elas representarem um fato contábil e seu lançamento correspondente, você fez uma correspondência correta. As cartas permanecerão viradas para cima, mas permanecerão no tabuleiro. Se não formarem um par correspondente, elas serão viradas novamente, mantendo-se na mesma posição.</p>
+        </div>
+        <a id="game-link" href="game.html">Jogar Agora</a>
+    </div>
+</body>
+</html>
