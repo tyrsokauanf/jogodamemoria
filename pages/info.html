@@ -17,8 +17,8 @@
         }
 
         body {
-            background-color: #ffffff; /* Alterado para branco */
-            font-size: 10px; /* Tamanho da fonte reduzido */
+            background-color: #ffffff;
+            font-size: 10px;
         }
 
         .container {
@@ -28,41 +28,100 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            font-size: 12px; /* Tamanho da fonte reduzido */
-            line-height: 1.6; /* Espaçamento entre linhas aumentado */
+            font-size: 12px;
+            line-height: 1.6;
         }
 
         h1 {
             text-align: center;
-            font-size: 1.8em; /* Tamanho da fonte aumentado */
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
 
         .objective, .interface, .play {
             margin-bottom: 20px; /* Adiciona espaçamento entre os quadrados */
-            padding: 15px; /* Adiciona espaçamento interno */
-            background-color: #f0f0f0; /* Cor de fundo dos quadrados */
-            border: 2px solid #000000; /* Borda preta */
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 2px solid #000000;
             border-radius: 5px;
-            font-size: 0.9em; /* Tamanho da fonte reduzido */
-            text-align: justify; /* Justifica o texto */
+            font-size: 0.9em;
+            text-align: justify;
+            text-align: center; /* Centraliza o texto */
         }
 
-        #game-link {
+        .example-box {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .example-content {
+            background-color: #fff;
+            padding: 20px;
+            width: 70%; /* Largura ajustada */
+            max-width: 400px; /* Largura máxima definida */
+            height: 70%; /* Altura ajustada */
+            max-height: 400px; /* Altura máxima definida */
+            border-radius: 10px; /* Aumenta a borda */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Espaçamento entre os elementos */
+            align-items: center;
+        }
+
+        #game-link, .example-close button {
             display: block;
-            width: 250px; /* Aumento do tamanho do link */
+            width: 200px; /* Reduzido o tamanho */
             margin: 20px auto;
-            padding: 15px 30px; /* Aumento do padding */
+            padding: 12px; /* Reduzido o padding */
             text-align: center;
-            background-color: #000000; /* Alterado para preto */
-            color: #ffffff; /* Alterado para branco */
+            background-color: #000000;
+            color: #ffffff;
             text-decoration: none;
-            border: 2px solid #808080; /* Alterado para borda cinza */
+            border: 3px solid #DCDCDC;
             border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s; /* Adicionada transição */
         }
 
-        #game-link:hover {
-            background-color: #333333; /* Alterado para escurecer no hover */
-            border-color: #555555; /* Alterado para borda mais escura no hover */
+        #game-link:hover, .example-close button:hover {
+            background-color: #333333;
+            border-color: #555555;
+        }
+
+        #example-link {
+            color: #0077cc;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #example-link:hover {
+            text-decoration: underline;
+        }
+
+        #example-link:focus {
+            outline: none;
+        }
+
+        .example-text {
+            margin-bottom: 20px; /* Adiciona espaço abaixo do texto */
+        }
+
+        .example-close button {
+            margin-top: 20px; /* Adiciona espaço acima do botão */
+        }
+
+        .example-text p {
+            margin-bottom: 10px;
+            line-height: 1.6; /* Espaçamento entre as linhas */
         }
     </style>
 </head>
@@ -71,17 +130,42 @@
         <h1>Como Jogar?</h1>
         <div class="objective">
             <p>Objetivo:</p>
-            <p>O objetivo do jogo é combinar corretamente cada fato contábil com o lançamento contábil que o descreve.</p>
+            <p>O objetivo do jogo é associar corretamente cada informação contábil com sua descrição correspondente de lançamento contábil.</p>
         </div>
         <div class="interface">
             <p>Interface do Jogo:</p>
-            <p>Na tela, você verá várias cartas viradas para baixo, cada uma representando um fato contábil ou seu lançamento correspondente.</p>
+            <p>Quando você abrir o jogo, verá várias cartas viradas para baixo na tela. Cada carta representa uma informação contábil ou um lançamento contábil correspondente.</p>
+            <p id="example-link">Exemplo</p>
         </div>
         <div class="play">
             <p>Jogada:</p>
-            <p>Clique em duas cartas para revelá-las. Se elas representarem um fato contábil e seu lançamento correspondente, você fez uma correspondência correta. As cartas permanecerão viradas para cima, mas permanecerão no tabuleiro. Se não formarem um par correspondente, elas serão viradas novamente, mantendo-se na mesma posição.</p>
+            <p>Para jogar, clique em duas cartas para virá-las e revelar seu conteúdo. Se as duas cartas mostrarem uma informação contábil e seu lançamento correspondente, você fez uma correspondência correta! Essas cartas permanecerão viradas para cima no tabuleiro. Se as cartas não formarem um par correspondente, elas serão viradas novamente, mantendo-se na mesma posição. Continue virando as cartas e fazendo correspondências até encontrar todos os pares corretos.</p>
         </div>
-        <a id="game-link" href="game.html">Jogar Agora</a>
+        <a id="game-link" href="game.html">Jogar Agora!</a>
     </div>
+
+    <div class="example-box" id="example-box">
+        <div class="example-content">
+            <h2>Exemplo:</h2>
+            <div class="example-text">
+    <p style="margin-bottom: 10px; text-align: center;">Para a informação contábil "Pagamento de contas de água e energia elétrica", a carta com o lançamento correspondente seria a seguinte:</p>
+    <p style="margin-bottom: 10px;">D- Despesas de Água e Energia</p>
+    <p style="margin-bottom: 10px;">C- Caixa</p>
+</div>
+            <div class="example-close">
+                <button onclick="closeExample()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("example-link").onclick = function() {
+            document.getElementById("example-box").style.display = "flex";
+        }
+
+        function closeExample() {
+            document.getElementById("example-box").style.display = "none";
+        }
+    </script>
 </body>
 </html>
