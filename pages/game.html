@@ -1,15 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/game.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <title>Jogo da Memória</title>
 
-  <script defer src="../js/game.js"></script>
+  <style>
+    /* Estilos CSS personalizados para a caixa modal */
+    .modal {
+      background-color: #f5f5f5;
+      border: 2px solid #000;
+      border-radius: 20px;
+      padding: 50px 30px; /* Ajustado o padding para 50px na vertical e 30px na horizontal */
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 400px; /* Limitado a largura da caixa modal */
+      width: 80%; /* Adicionado uma largura para telas menores */
+      color: #000;
+    }
 
-  <title>Memory Game</title>
+    .modal h2 {
+      margin-bottom: 20px;
+    }
+
+    .modal p {
+      margin-bottom: 30px;
+    }
+
+    .close-button, .view-ranking-button { /* Botão "Ver ranking" */
+      padding: 10px 20px;
+      background-color: #000000; /* Cor de fundo */
+      color: #ffffff; /* Cor do texto */
+      border: 2px solid #DCDCDC; /* Cor da borda */
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .close-button:hover, .view-ranking-button:hover { /* Efeito hover */
+      background-color: #333333;
+      border-color: #555555;
+    }
+
+    /* Ajuste para telas menores */
+    @media (max-width: 600px) {
+      .modal {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -23,6 +70,21 @@
     <div class="grid"></div>
   </main>
 
+  <!-- Caixa modal -->
+<div class="modal" id="modal" style="display: none;">
+  <h2>Parabéns, <span id="playerName"></span>!</h2>
+  <p>Seu tempo foi de: <span id="playerTime"></span> segundos</p>
+  <a href="../ranking.html" class="view-ranking-button">Ver ranking</a> <!-- Botão com a classe "view-ranking-button" -->
+</div>
+
+  <script>
+    // JavaScript para fechar a caixa modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+  <script defer src="../js/game.js"></script>
 </body>
 
 </html>
