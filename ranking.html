@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            border: none;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-size: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid #000;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .play-again-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            text-align: center;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            border: 3px solid #DCDCDC;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .play-again-button:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ranking dos Melhores Tempos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome do Jogador</th>
+                    <th>Tempo (segundos)</th>
+                </tr>
+            </thead>
+            <tbody id="rankingTable">
+                <!-- Aqui serão inseridos os dados do ranking dinamicamente -->
+            </tbody>
+        </table>
+        <a href="index.html" class="play-again-button">Jogar Novamente!</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para exibir o ranking
+            function displayRanking() {
+                const rankingTable = document.getElementById('rankingTable');
+                rankingTable.innerHTML = ''; // Limpa a tabela antes de atualizar
+
+                const players = JSON.parse(localStorage.getItem('players')) || []; // Recupera os jogadores do localStorage
+                // Ordena os jogadores por tempo (do menor para o maior)
+                players.sort((a, b) => a.time - b.time);
+                // Exibe os jogadores na tabela
+                for (let i = 0; i < Math.min(players.length, 3); i++) {
+                    const player = players[i];
+                    const position = i + 1;
+                    const playerName = player ? player.name : '-';
+                    const playerTime = player ? player.time : '-';
+                    const row = `<tr>
+                                    <td>${position}</td>
+                                    <td>${playerName}</td>
+                                    <td>${playerTime}</td>
+                                </tr>`;
+                    rankingTable.innerHTML += row;
+                }
+            }
+
+            // Chama a função para exibir o ranking ao carregar a página
+            displayRanking();
+
+            // Evento de clique no botão "Jogar Novamente"
+            const playAgainButton = document.querySelector('.play-again-button');
+            playAgainButton.addEventListener('click', function() {
+                // Redireciona para a página index.html
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
