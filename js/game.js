@@ -29,7 +29,12 @@ const checkEndGame = () => {
 
   if (disabledCards.length === 20) {
     clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+    const playerName = spanPlayer.innerHTML;
+    const playerTime = timer.innerHTML;
+    const allPlayers = JSON.parse(localStorage.getItem('players')) || [];
+    allPlayers.push({ name: playerName, time: playerTime });
+    localStorage.setItem('players', JSON.stringify(allPlayers));
+    openModal(playerName, playerTime);
   }
 }
 
@@ -126,4 +131,14 @@ window.onload = () => {
   spanPlayer.innerHTML = localStorage.getItem('player');
   startTimer();
   loadGame();
+}
+
+function openModal(playerName, playerTime) {
+  document.getElementById('playerName').innerText = playerName;
+  document.getElementById('playerTime').innerText = playerTime;
+  document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
 }
