@@ -67,7 +67,7 @@
             padding: 20px;
             width: 70%; /* Largura ajustada */
             max-width: 400px; /* Largura máxima definida */
-            height: 70%; /* Altura ajustada */
+            height: 50%; /* Altura ajustada */
             max-height: 400px; /* Altura máxima definida */
             border-radius: 10px; /* Aumenta a borda */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -81,7 +81,7 @@
         #game-link, .example-close button {
             display: block;
             width: 200px; /* Reduzido o tamanho */
-            margin: 20px auto;
+            margin: 2px auto;
             padding: 12px; /* Reduzido o padding */
             text-align: center;
             background-color: #000000;
@@ -112,16 +112,18 @@
         }
 
         .example-text {
-            margin-bottom: 20px; /* Adiciona espaço abaixo do texto */
-        }
-
-        .example-close button {
-            margin-top: 20px; /* Adiciona espaço acima do botão */
+            margin-bottom: 1px; /* Adiciona espaço abaixo do texto */
+            margin-top: 2px; /* Adiciona espaço acima do texto */
         }
 
         .example-text p {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             line-height: 1.6; /* Espaçamento entre as linhas */
+        }
+        
+        .example-close {
+            margin-top: 1px; /* Ajusta o espaçamento do botão "Fechar" */
+            align-self: center; /* Centraliza o botão "Fechar" */
         }
     </style>
 </head>
@@ -148,10 +150,10 @@
         <div class="example-content">
             <h2>Exemplo:</h2>
             <div class="example-text">
-    <p style="margin-bottom: 10px; text-align: center;">Para a informação contábil "Pagamento de contas de água e energia elétrica", a carta com o lançamento correspondente seria a seguinte:</p>
-    <p style="margin-bottom: 10px;">D- Despesas de Água e Energia</p>
-    <p style="margin-bottom: 10px;">C- Caixa</p>
-</div>
+                <p style="margin-bottom: 20px; text-align: center;">Para a informação contábil "Pagamento de contas de água e energia elétrica", a carta com o lançamento correspondente seria a seguinte:</p>
+                <p style="margin-bottom: 10px;">D- Despesas de Água e Energia</p>
+                <p style="margin-bottom: 0px;">C- Caixa</p>
+            </div>
             <div class="example-close">
                 <button onclick="closeExample()">Fechar</button>
             </div>
@@ -169,3 +171,4 @@
     </script>
 </body>
 </html>
+
