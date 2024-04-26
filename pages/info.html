@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
@@ -39,14 +39,14 @@
         }
 
         .objective, .interface, .play {
-            margin-bottom: 20px; /* Adiciona espaçamento entre os quadrados */
+            margin-bottom: 10px; /* Adiciona espaçamento entre os quadrados */
             padding: 15px;
             background-color: #f0f0f0;
             border: 2px solid #000000;
             border-radius: 5px;
             font-size: 0.9em;
-            text-align: justify;
-            text-align: center; /* Centraliza o texto */
+            text-align: center;
+    
         }
 
         .example-box {
@@ -78,33 +78,65 @@
             align-items: center;
         }
 
-        #game-link, .example-close button {
-            display: block;
-            width: 200px; /* Reduzido o tamanho */
-            margin: 2px auto;
-            padding: 12px; /* Reduzido o padding */
+        #game-link {
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
             text-align: center;
-            background-color: #000000;
-            color: #ffffff;
-            text-decoration: none;
-            border: 3px solid #DCDCDC;
-            border-radius: 5px;
-            transition: background-color 0.3s, border-color 0.3s; /* Adicionada transição */
+            cursor: pointer;
+            font-size: 1em;
+            padding: 15px;
+            width: 190px; /* Aumenta a largura */
+            max-width: 100%;
+            display: block; /* Para centralizar */
+            margin: 0 auto; /* Para centralizar */
+            text-decoration: none; /* Remove sublinhado */
         }
 
-        #game-link:hover, .example-close button:hover {
-            background-color: #333333;
-            border-color: #555555;
+        #game-link:hover {
+            background-color: #333; /* Não muda de cor */
+            color: #fff; /* Não muda de cor */
+            cursor: pointer;
+        }
+
+        #game-link:focus {
+            outline: none;
+        }
+
+        .example-close button {
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 15px;
+            width: auto; /* Largura automática */
+            max-width: 100%;
+            margin-top: 10px; /* Espaçamento superior */
+            text-decoration: none; /* Remove sublinhado */
+        }
+
+        .example-close button:hover {
+            background-color: #333; /* Não muda de cor */
+            color: #fff; /* Não muda de cor */
+            cursor: pointer;
+        }
+
+        .example-close button:focus {
+            outline: none;
         }
 
         #example-link {
             color: #0077cc;
             cursor: pointer;
-            text-decoration: underline;
+            text-decoration: none; /* Remove sublinhado */
         }
 
         #example-link:hover {
-            text-decoration: underline;
+            text-decoration: none; /* Remove sublinhado */
         }
 
         #example-link:focus {
@@ -131,17 +163,14 @@
     <div class="container">
         <h1>Como Jogar?</h1>
         <div class="objective">
-            <p>Objetivo:</p>
-            <p>O objetivo do jogo é associar corretamente cada informação contábil com sua descrição correspondente de lançamento contábil.</p>
-        </div>
-        <div class="interface">
-            <p>Interface do Jogo:</p>
-            <p>Quando você abrir o jogo, verá várias cartas viradas para baixo na tela. Cada carta representa uma informação contábil ou um lançamento contábil correspondente.</p>
+            <p>Objetivo: O objetivo do jogo é associar corretamente cada informação contábil com sua descrição correspondente de lançamento contábil.</p>
             <p id="example-link">Exemplo</p>
         </div>
+        <div class="interface">
+            <p>Interface do Jogo: Quando você abrir o jogo, verá várias cartas viradas para baixo na tela. Cada carta representa uma informação contábil ou um lançamento contábil.</p>
+        </div>
         <div class="play">
-            <p>Jogada:</p>
-            <p>Para jogar, clique em duas cartas para virá-las e revelar seu conteúdo. Se as duas cartas mostrarem uma informação contábil e seu lançamento correspondente, você fez uma correspondência correta! Essas cartas permanecerão viradas para cima no tabuleiro. Se as cartas não formarem um par correspondente, elas serão viradas novamente, mantendo-se na mesma posição. Continue virando as cartas e fazendo correspondências até encontrar todos os pares corretos.</p>
+            <p>Jogada: Para jogar, clique em duas cartas para virá-las e revelar seu conteúdo. Se as duas cartas mostrarem uma informação contábil e seu lançamento correspondente, você fez uma correspondência correta! Essas cartas permanecerão viradas para cima no tabuleiro. Se as cartas não formarem um par correspondente, elas serão viradas novamente, mantendo-se na mesma posição. Continue virando as cartas e fazendo correspondências até encontrar todos os pares corretos.</p>
         </div>
         <a id="game-link" href="game.html">Jogar Agora!</a>
     </div>
@@ -171,4 +200,5 @@
     </script>
 </body>
 </html>
+
 
